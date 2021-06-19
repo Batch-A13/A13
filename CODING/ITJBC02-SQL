@@ -1,0 +1,199 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.25a
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema itjbco2
+--
+
+CREATE DATABASE IF NOT EXISTS itjbco2;
+USE itjbco2;
+
+--
+-- Definition of table `fileupload`
+--
+
+DROP TABLE IF EXISTS `fileupload`;
+CREATE TABLE `fileupload` (
+  `useremail` varchar(45) DEFAULT NULL,
+  `filename` varchar(45) NOT NULL DEFAULT '',
+  `filetype` varchar(45) DEFAULT NULL,
+  `filesize` varchar(45) DEFAULT NULL,
+  `filekey` varchar(45) DEFAULT NULL,
+  `cspkey` varchar(45) DEFAULT NULL,
+  `filecontent` longtext,
+  `encrypt` longtext,
+  `decrypt` longtext,
+  `prehash` longtext,
+  `afterhash` longtext,
+  PRIMARY KEY (`filename`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fileupload`
+--
+
+/*!40000 ALTER TABLE `fileupload` DISABLE KEYS */;
+INSERT INTO `fileupload` (`useremail`,`filename`,`filetype`,`filesize`,`filekey`,`cspkey`,`filecontent`,`encrypt`,`decrypt`,`prehash`,`afterhash`) VALUES 
+ ('subash1996@gmail.com','new2019.pdf','application/pdf','1035243','41195','3A3A1','This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TCCN.2019.2956141, IEEE\nTransactions on Cognitive Communications and Networking\nA\nJOURNAL OF LT X CLASS FILES 12\nE\nTABLE I\nCOMPARISON OF COLLECTED DATA\nOur system Flowsense PBP Sketch-based method\nNetwork conditions\nThe number of packets The number of packets\nThe number of ?ows\nThe number of ?ows The number of ?ows\nof elephant ?ows of elephant ?ows\nElephant ?ow\n4963 1134 1207 5325 4972\nbased DDoS attacks\nMice ?ow\n575 5245 5212 5278 583\nbased DDoS attacks\nLink ?ood\n4901 1083 1125 5332 232\nbased DDoS attacks\nTABLE II\nCAPABILITY OF THREAT PERCEPTION\nNetwork conditions Our system Flowsense PBP Sketch-based method\nElephant ?ow\nYes No Yes Yes\nbased DDoS attacks\nMice ?ow\nYes Yes Yes No\nbased DDoS attacks\nLink ?ood\nYes No Yes No\nbased DDoS attacks\ncan be easily detected. The PBP method records the ?ow ACKNOWLEDGMENT\nstate, and thus it is also ef?cient to sense this attack. The\nThe work is supported in part by the National Natural Sci-\nFlowsense method uses the method of collecting packets from\nence Foundation of China under Grants 61672410, 61802293\nmultiple network nodes. Although it can detect the attack, its\nand U1536202, the Academy of Finland under Grants 308087\nperformance is poor. The sketch-based method can only detect\nand 314203, the Key Lab of Information Network Security,\nthe elephant ?ow, but cannot detect mice ?ows. Thus, it cannot\nMinistry of Public Security under grant No. C18614, the\nperceive this kind of DDoS attack.\nNational Postdoctoral Program for Innovative Talents under\nThe link ?ooding based attack is similar to the elephant\ngrant BX20180238, the Project funded by China Postdoctoral\n?ow based DDoS attack, which can result in blocking some\nScience Foundation under grant 2018M633461, the open grant\nnodes in the network. Therefore, both our system and the\nof the Tactical Data Link Lab of the 20th Research Institute of\nPBP method can sense it. However, The Flowsense method\nChina Electronics Technology Group Corporation, P.R. China\nis unable to recognize this attack. The sketch-based method\nunder grant CLDL-20182119, the Shaanxi Innovation Team\nis usually deployed at a gateway or host nodes, thus it cannot\nproject under grant 2018TD-007 and the 111 project under\nidentify the attack on links.\ngrant B16037.\nREFERENCES\nV. CONCLUSION\n[1] M.K. Karray, \"Analytical evaluation of QoS in the downlink of OFDMA\nwireless cellular networks serving streaming and elastic traf?c,\" IEEE\nTransactions on Wireless Communications, vol. 9, no. 5, pp. 1799-1807,\nIn this paper, we proposed an adaptive network data col-\n2010.\nlection system in SDN. It employs a network measurement [2] P.H. Isolani, J.A. Wickboldt, C.B. Both, et al., \"Interactive monitoring,\nvisualization, and con?guration of OpenFlow-based SDN,\" in Proc. of\nand evaluation model to quantify network node and link states\nI?p/ieee International Symposium on Integrated Network Management,\nfor selecting proper nodes for data collection. The selected\n2015.\nnodes adaptively perform ?ow sampling based on ?ow char- [3] D. Marconett and S.J.B. Yoo, \"FlowBroker: A software-de?ned network\ncontroller architecture for multi-domain brokering and reputation,\" Jour-\nacteristics, thus ensuring the economy, ef?ciency, ef?cacy and\nnal of Network and Systems Management, vol. 23, no. 2, pp. 328-359,\nlow resource consumption of data collection. We conducted a\n2015.\nseries of experiments based on a proof-of-concept prototype [4] J.M. Wang, W. Ying, X. Dai, et al., \"SDN-based multi-class QoS-\nguaranteed inter-data center traf?c management,\" in Proc. of IEEE\nto evaluate our system and compare its performance with\nInternational Conference on Cloud Networking, 2014.\nother methods in terms of CPU/memory consumption, storage\n[5] M. Belyaev and S. Gaivoronski, \"Towards load balancing in SDN-\nusage, ?ow size recovery, and threat perception. Experimental networks during DDoS-attacks,\" in Proc. of Science & Technology\nConference, 2015.\nresults show that our system outperforms other methods as\n[6] R.T. Kokila, S.T. Selvi, and K. Govindarajan, \"DDoS detection and anal-\na whole. Although our system can help detecting mainstream\nysis in SDN-based environment using support vector machine classi?er,\"\nin Proc. of 6th International Conference on Advanced Computing, 2015.\nDDoS attacks, it might not perceive other types of attacks, e.g.,\n[7] K. Bhushan and B.B. Gupta, \"Distributed denial of service (DDoS) attack\nimpersonation attacks. Future work includes real deployment\nmitigation in software de?ned network (SDN)-based cloud computing\nin a 5G test-bed system to support 5G network management\nenvironment,\" Journal of Ambient Intelligence & Humanized Computing,\nand intrusion detection. vol. 10, no. 5, pp. 1985-1997, 2019.\n2332-7731 (c) 2019 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.','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\r\nzQK/iLhO','This article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/TCCN.2019.2956141, IEEE\nTransactions on Cognitive Communications and Networking\nA\nJOURNAL OF LT X CLASS FILES 12\nE\nTABLE I\nCOMPARISON OF COLLECTED DATA\nOur system Flowsense PBP Sketch-based method\nNetwork conditions\nThe number of packets The number of packets\nThe number of ?ows\nThe number of ?ows The number of ?ows\nof elephant ?ows of elephant ?ows\nElephant ?ow\n4963 1134 1207 5325 4972\nbased DDoS attacks\nMice ?ow\n575 5245 5212 5278 583\nbased DDoS attacks\nLink ?ood\n4901 1083 1125 5332 232\nbased DDoS attacks\nTABLE II\nCAPABILITY OF THREAT PERCEPTION\nNetwork conditions Our system Flowsense PBP Sketch-based method\nElephant ?ow\nYes No Yes Yes\nbased DDoS attacks\nMice ?ow\nYes Yes Yes No\nbased DDoS attacks\nLink ?ood\nYes No Yes No\nbased DDoS attacks\ncan be easily detected. The PBP method records the ?ow ACKNOWLEDGMENT\nstate, and thus it is also ef?cient to sense this attack. The\nThe work is supported in part by the National Natural Sci-\nFlowsense method uses the method of collecting packets from\nence Foundation of China under Grants 61672410, 61802293\nmultiple network nodes. Although it can detect the attack, its\nand U1536202, the Academy of Finland under Grants 308087\nperformance is poor. The sketch-based method can only detect\nand 314203, the Key Lab of Information Network Security,\nthe elephant ?ow, but cannot detect mice ?ows. Thus, it cannot\nMinistry of Public Security under grant No. C18614, the\nperceive this kind of DDoS attack.\nNational Postdoctoral Program for Innovative Talents under\nThe link ?ooding based attack is similar to the elephant\ngrant BX20180238, the Project funded by China Postdoctoral\n?ow based DDoS attack, which can result in blocking some\nScience Foundation under grant 2018M633461, the open grant\nnodes in the network. Therefore, both our system and the\nof the Tactical Data Link Lab of the 20th Research Institute of\nPBP method can sense it. However, The Flowsense method\nChina Electronics Technology Group Corporation, P.R. China\nis unable to recognize this attack. The sketch-based method\nunder grant CLDL-20182119, the Shaanxi Innovation Team\nis usually deployed at a gateway or host nodes, thus it cannot\nproject under grant 2018TD-007 and the 111 project under\nidentify the attack on links.\ngrant B16037.\nREFERENCES\nV. CONCLUSION\n[1] M.K. Karray, \"Analytical evaluation of QoS in the downlink of OFDMA\nwireless cellular networks serving streaming and elastic traf?c,\" IEEE\nTransactions on Wireless Communications, vol. 9, no. 5, pp. 1799-1807,\nIn this paper, we proposed an adaptive network data col-\n2010.\nlection system in SDN. It employs a network measurement [2] P.H. Isolani, J.A. Wickboldt, C.B. Both, et al., \"Interactive monitoring,\nvisualization, and con?guration of OpenFlow-based SDN,\" in Proc. of\nand evaluation model to quantify network node and link states\nI?p/ieee International Symposium on Integrated Network Management,\nfor selecting proper nodes for data collection. The selected\n2015.\nnodes adaptively perform ?ow sampling based on ?ow char- [3] D. Marconett and S.J.B. Yoo, \"FlowBroker: A software-de?ned network\ncontroller architecture for multi-domain brokering and reputation,\" Jour-\nacteristics, thus ensuring the economy, ef?ciency, ef?cacy and\nnal of Network and Systems Management, vol. 23, no. 2, pp. 328-359,\nlow resource consumption of data collection. We conducted a\n2015.\nseries of experiments based on a proof-of-concept prototype [4] J.M. Wang, W. Ying, X. Dai, et al., \"SDN-based multi-class QoS-\nguaranteed inter-data center traf?c management,\" in Proc. of IEEE\nto evaluate our system and compare its performance with\nInternational Conference on Cloud Networking, 2014.\nother methods in terms of CPU/memory consumption, storage\n[5] M. Belyaev and S. Gaivoronski, \"Towards load balancing in SDN-\nusage, ?ow size recovery, and threat perception. Experimental networks during DDoS-attacks,\" in Proc. of Science & Technology\nConference, 2015.\nresults show that our system outperforms other methods as\n[6] R.T. Kokila, S.T. Selvi, and K. Govindarajan, \"DDoS detection and anal-\na whole. Although our system can help detecting mainstream\nysis in SDN-based environment using support vector machine classi?er,\"\nin Proc. of 6th International Conference on Advanced Computing, 2015.\nDDoS attacks, it might not perceive other types of attacks, e.g.,\n[7] K. Bhushan and B.B. Gupta, \"Distributed denial of service (DDoS) attack\nimpersonation attacks. Future work includes real deployment\nmitigation in software de?ned network (SDN)-based cloud computing\nin a 5G test-bed system to support 5G network management\nenvironment,\" Journal of Ambient Intelligence & Humanized Computing,\nand intrusion detection. vol. 10, no. 5, pp. 1985-1997, 2019.\n2332-7731 (c) 2019 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.','','07fdc627bf2a6acc7f37e2d56cdcfe8340a41a0c3390eb4ef9f2d11031499c06');
+/*!40000 ALTER TABLE `fileupload` ENABLE KEYS */;
+
+
+--
+-- Definition of table `ownerreg`
+--
+
+DROP TABLE IF EXISTS `ownerreg`;
+CREATE TABLE `ownerreg` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phno` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `cpassword` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ownerreg`
+--
+
+/*!40000 ALTER TABLE `ownerreg` DISABLE KEYS */;
+INSERT INTO `ownerreg` (`id`,`name`,`email`,`phno`,`password`,`cpassword`) VALUES 
+ (1,'subash','subash1996@gmail.com','9988776655','12345','12345');
+/*!40000 ALTER TABLE `ownerreg` ENABLE KEYS */;
+
+
+--
+-- Definition of table `ownerreq`
+--
+
+DROP TABLE IF EXISTS `ownerreq`;
+CREATE TABLE `ownerreq` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `file` varchar(45) DEFAULT NULL,
+  `omail` varchar(45) DEFAULT NULL,
+  `Accept` varchar(45) DEFAULT NULL,
+  `message` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ownerreq`
+--
+
+/*!40000 ALTER TABLE `ownerreq` DISABLE KEYS */;
+INSERT INTO `ownerreq` (`id`,`file`,`omail`,`Accept`,`message`) VALUES 
+ (1,'applsci-09-03074 (2).pdf','subash1996@gmail.com','Accept','i want to uploading a file ..... pls accept '),
+ (2,'ss.pdf','subash1996@gmail.com ','Accept','yhfgjhf'),
+ (3,'new2019.pdf','subash1996@gmail.com','Accept','hfgcyhgfujyy'),
+ (4,'new2019.pdf','subash1996@gmail.com','Accept','tyg hftgujyi'),
+ (5,'railway.pdf','subash1996@gmail.com','Accept','yjykh'),
+ (6,'new2019.pdf','subash1996@gmail.com','Accept','tyhtujtyuj'),
+ (7,'ITJBC031.pdf','subash1996@gmail.com','Accept','rdtuj6tf7ii8'),
+ (8,'crime.pdf','subash1996@gmail.com','Accept','zxcgvrtfuyhj'),
+ (9,'documentation.txt','subash1996@gmail.com','Accept','vfgdhgrtd'),
+ (10,'new2019.pdf','subash1996@gmail.com','Accept','dfhghyfgujhtyuj');
+/*!40000 ALTER TABLE `ownerreq` ENABLE KEYS */;
+
+
+--
+-- Definition of table `thirdaccept`
+--
+
+DROP TABLE IF EXISTS `thirdaccept`;
+CREATE TABLE `thirdaccept` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `filename` varchar(45) DEFAULT NULL,
+  `filekey` varchar(45) DEFAULT NULL,
+  `cspkey` varchar(45) DEFAULT NULL,
+  `omail` varchar(45) DEFAULT NULL,
+  `umail` varchar(45) DEFAULT NULL,
+  `prehash` longtext,
+  `afterhash` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `thirdaccept`
+--
+
+/*!40000 ALTER TABLE `thirdaccept` DISABLE KEYS */;
+INSERT INTO `thirdaccept` (`id`,`filename`,`filekey`,`cspkey`,`omail`,`umail`,`prehash`,`afterhash`) VALUES 
+ (1,'new2019.pdf ','41195','3A3A1','subash1996@gmail.com','subashanbu1996@gmail.com','','1793b2c4b69f6c06d7626b34ecfb2a82f46e6bbb3bb05ae118a8ae53f7845ce0');
+/*!40000 ALTER TABLE `thirdaccept` ENABLE KEYS */;
+
+
+--
+-- Definition of table `userreg`
+--
+
+DROP TABLE IF EXISTS `userreg`;
+CREATE TABLE `userreg` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `cpassword` varchar(45) DEFAULT NULL,
+  `phno` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userreg`
+--
+
+/*!40000 ALTER TABLE `userreg` DISABLE KEYS */;
+INSERT INTO `userreg` (`id`,`username`,`email`,`password`,`cpassword`,`phno`) VALUES 
+ (14,'arun','subashanbu1996@gmail.com','12345','12345','9977886655');
+/*!40000 ALTER TABLE `userreg` ENABLE KEYS */;
+
+
+--
+-- Definition of table `userrequest`
+--
+
+DROP TABLE IF EXISTS `userrequest`;
+CREATE TABLE `userrequest` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `filename` varchar(45) DEFAULT NULL,
+  `filekey` varchar(45) DEFAULT NULL,
+  `cspkey` varchar(45) DEFAULT NULL,
+  `omail` varchar(45) DEFAULT NULL,
+  `umail` varchar(45) DEFAULT NULL,
+  `prehash` longtext,
+  `afterhash` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userrequest`
+--
+
+/*!40000 ALTER TABLE `userrequest` DISABLE KEYS */;
+INSERT INTO `userrequest` (`id`,`filename`,`filekey`,`cspkey`,`omail`,`umail`,`prehash`,`afterhash`) VALUES 
+ (1,'new2019.pdf','41195','3A3A1','subash1996@gmail.com','subashanbu1996@gmail.com','','1793b2c4b69f6c06d7626b34ecfb2a82f46e6bbb3bb05ae118a8ae53f7845ce0');
+/*!40000 ALTER TABLE `userrequest` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
